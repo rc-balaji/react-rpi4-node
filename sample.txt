@@ -1,3 +1,77 @@
+https://chat.openai.com/c/367135bf-ae8b-4f46-b646-60e9c4c4374e
+'''
+ktrpi2@raspberrypi:~/Documents/Printer/client $ pm2 serve /home/ktrpi2/Documents/Printer/client/dist 8080 --spa --name my-react-app
+[PM2] Starting /home/ktrpi2/.config/nvm/versio
+ktrpi2@raspberrypi:~/Documents/Printer/client $ pm2 list
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ my-react-app       │ fork     │ 0    │ online    │ 0%       │ 48.0mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+ktrpi2@raspberrypi:~/Documents/Printer/client $ pm2 stop all
+[PM2] Applying action stopProcessId on app [all](ids: [ 0 ])
+[PM2] [my-react-app](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+ktrpi2@raspberrypi:~/Documents/Printer/client $ pm2 serve /home/ktrpi2/Documents/Printer/client/dist 80 --spa --name my-react-app
+[PM2] Starting /home/ktrpi2/.config/nvm/versions/node/v20.11.1/lib/node_modules/pm2/lib/API/Serve.js in fork_mode (1 instance)
+[PM2] Done.
+[PM2] Serving /home/ktrpi2/Documents/Printer/client/dist on port 80
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ my-react-app       │ fork     │ 0    │ 
+ktrpi2@raspberrypi:~/Documents/Printer/client 
+ktrpi2@raspberrypi:~/Documents/Printer/client 
+ktrpi2@raspberrypi:~/Documents/Printer/client $ pm2 serve
+[PM2] Starting /home/ktrpi2/.config/nvm/versions/node/v20.11.1/lib/node_modules/pm2/lib/API/Serve.js in fork_mode (1 instance)
+[PM2] Done.
+[PM2] Serving /home/ktrpi2/Documents/Printer/c
+ktrpi2@raspberrypi:~/Documents/Printer/client $ pm2 list
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ my-react-app       │ fork     │ 0    │ online    │ 0%       │ 50.1mb   │
+│ 1  │ static-page-serve… │ fork     │ 7    │ online    │ 0%       │ 45.3mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+ktrpi2@raspberrypi:~/Documents/Printer/client 
+ktrpi2@raspberrypi:~/Documents/Printer/client $ 
+'''
+server
+'''
+
+ktrpi2@raspberrypi:~/Documents/Printer/server $ pm2 start npm --name "myApp" -- start
+[PM2] Starting /home/ktrpi2/.config/nvm/versions/node/v20.11.1/bin/npm in fork_mode (1 instance)
+[PM2] Done.
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ my-react-app       │ fork     │ 0    │ online    │ 20%      │ 51.3mb   │
+│ 1  │ myApp              │ fork     │ 0    │ online    │ 0%       │ 21.8mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+[PM2][WARN] Current process list is not synchronized with saved list. Type 'pm2 save' to synchronize.
+ktrpi2@raspberrypi:~/Documents/Printer/server $ pm2 startup
+[PM2] Init System found: systemd
+[PM2] To setup the Startup Script, copy/paste the following command:
+sudo env PATH=$PATH:/home/ktrpi2/.config/nvm/versions/node/v20.11.1/bin /home/ktrpi2/.config/nvm/versions/node/v20.11.1/lib/node_modules/pm2/bin/pm2 startup systemd -u ktrpi2 --hp /home/ktrpi2
+ktrpi2@raspberrypi:~/Documents/Printer/server $ pm2 save
+[PM2] Saving current process list...
+[PM2] Successfully saved in /home/ktrpi2/.pm2/dump.pm2
+ktrpi2@raspberrypi:~/Documents/Printer/server $ 
+
+'''
+
+
+
+
+
+
+
+
+
+
+
 Hosting a Vite project (or any Node.js application) on a Raspberry Pi and ensuring it runs in the background continuously, including after reboots, involves a few steps. One robust way to achieve this is by using pm2, a process manager for Node.js applications that can help you manage and keep your applications online.
 
 Step 1: Install Node.js and npm
