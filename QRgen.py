@@ -22,7 +22,7 @@ wifi_img = wifi_qr.make_image(fill_color="black", back_color="white")
 wifi_img.save("wifi_qr.png")
 
 # Website URL
-website_url = 'http://192.168.1.45/'
+website_url = 'http://192.168.1.45:8080/'
 
 # Generate Website QR code
 website_qr = qrcode.QRCode(
